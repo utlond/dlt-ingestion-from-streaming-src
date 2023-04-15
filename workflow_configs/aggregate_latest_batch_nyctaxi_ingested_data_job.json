@@ -1,0 +1,41 @@
+{
+    "name": "Aggregate_Latest_Batch_NYCTaxi_Ingested_Data",
+    "email_notifications": {
+        "no_alert_for_skipped_runs": false
+    },
+    "webhook_notifications": {},
+    "timeout_seconds": 0,
+    "schedule": {
+        "quartz_cron_expression": "47 4/5 * * * ?",
+        "timezone_id": "UTC",
+        "pause_status": "UNPAUSED"
+    },
+    "max_concurrent_runs": 1,
+    "tasks": [
+        {
+            "task_key": "triggered_read_from_ingested_tbl",
+            "pipeline_task": {
+                "pipeline_id": "617178af-9172-4339-b9b9-a1c922c0e59d",
+                "full_refresh": false
+            },
+            "timeout_seconds": 0,
+            "email_notifications": {}
+        },
+        {
+            "task_key": "aggregate_data_by_zip_codes",
+            "depends_on": [
+                {
+                    "task_key": "triggered_read_from_ingested_tbl"
+                }
+            ],
+            "notebook_task": {
+                "notebook_path": "/Users/<user_email_address>/nyc_taxi/agg_latest_batch_by_zip_codes",
+                "source": "WORKSPACE"
+            },
+            "existing_cluster_id": "0317-100724-udupnrzl",
+            "timeout_seconds": 0,
+            "email_notifications": {}
+        }
+    ],
+    "format": "MULTI_TASK"
+}

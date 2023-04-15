@@ -1,0 +1,24 @@
+{
+    "id": "617178af-9172-4339-b9b9-a1c922c0e59d",
+    "clusters": [
+        {
+            "label": "default",
+            "num_workers": 0
+        }
+    ],
+    "development": true,
+    "continuous": false,
+    "channel": "CURRENT",
+    "edition": "CORE",
+    "photon": false,
+    "libraries": [
+        {
+            "notebook": {
+                "path": "/Users/<user_email_address>/nyc_taxi/nyctaxi_triggered_dlt_code"
+            }
+        }
+    ],
+    "name": "nycdata_trigg_dlt_pipeline",
+    "storage": "dbfs:/pipelines/617178af-9172-4339-b9b9-a1c922c0e59d",
+    "target": "nyctaxi_dlt"
+}

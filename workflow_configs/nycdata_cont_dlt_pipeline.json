@@ -1,0 +1,27 @@
+{
+    "id": "da3a9a64-07c6-45ce-bd9c-01bb6700b06d",
+    "clusters": [
+        {
+            "label": "default",
+            "num_workers": 0
+        },
+        {
+            "label": "maintenance"
+        }
+    ],
+    "development": true,
+    "continuous": true,
+    "channel": "CURRENT",
+    "edition": "CORE",
+    "photon": false,
+    "libraries": [
+        {
+            "notebook": {
+                "path": "/Users/<user_email_address>/nyc_taxi/nyctaxi_continuous_dlt_code"
+            }
+        }
+    ],
+    "name": "nycdata_cont_dlt_pipeline",
+    "storage": "dbfs:/pipelines/da3a9a64-07c6-45ce-bd9c-01bb6700b06d",
+    "target": "nyctaxi_dlt"
+}
